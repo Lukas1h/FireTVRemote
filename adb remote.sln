@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adb remote", "adb remote\adb remote.csproj", "{6F0FC5C4-53D5-4B6C-AFA5-F589184D437B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADBLib", "ADBLib\ADBLib.csproj", "{72B03EB9-F02C-44B8-B59D-64E93DBA34EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADBRemoteUI", "ADBRemoteUI\ADBRemoteUI.csproj", "{792E19EB-0D4F-4F0E-AE85-FC03B5C8EFD4}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6F0FC5C4-53D5-4B6C-AFA5-F589184D437B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F0FC5C4-53D5-4B6C-AFA5-F589184D437B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F0FC5C4-53D5-4B6C-AFA5-F589184D437B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F0FC5C4-53D5-4B6C-AFA5-F589184D437B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72B03EB9-F02C-44B8-B59D-64E93DBA34EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72B03EB9-F02C-44B8-B59D-64E93DBA34EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72B03EB9-F02C-44B8-B59D-64E93DBA34EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E5545F-1B7C-4D48-83E7-008A41D4F3FF}
 	EndGlobalSection
 EndGlobal
