@@ -7,33 +7,38 @@ namespace ADBRemoteUI {
     class MainWindowViewModel : INotifyPropertyChanged {
         public MainWindowViewModel() {
             IsConnected = false;
-            ConnectCommand = new DelegateCommand((o) => { ADBCommand.ConnectServer(IpAddress);  IsConnected = true; });
+            ConnectCommand = new DelegateCommand((o) =>
+            {
+                Properties.Settings.Default.IpAddress = IpAddress;
+                Properties.Settings.Default.Save();
+                ADBCommand.ConnectServer(IpAddress);  IsConnected = true;
+            });
             DisconnectCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.DisconnectServer(); IsConnected = false; });
-            HomeCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Escape);  }, (o) => { return true; });
-            SelectCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Enter); }, (o) => { return true; });
-            UpCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.UpArrow);  }, (o) => { return true; });
-            DownCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.DownArrow);  }, (o) => { return true; });
-            LeftCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.LeftArrow); }, (o) => { return true; });
-            RightCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.RightArrow);  }, (o) => { return true; });
-            BackCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Backspace); }, (o) => { return true; });
+            HomeCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Escape);  }, (o) => true);
+            SelectCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Enter); }, (o) => true);
+            UpCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.UpArrow);  }, (o) => true);
+            DownCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.DownArrow);  }, (o) => true);
+            LeftCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.LeftArrow); }, (o) => true);
+            RightCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.RightArrow);  }, (o) => true);
+            BackCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Backspace); }, (o) => true);
         }
 
-        private string ipAddress = "192.168.1.86:5555";
+        private string _ipAddress = Properties.Settings.Default.IpAddress;
         public string IpAddress {
             get {
-                return ipAddress;
+                return _ipAddress;
             }
             set {
-                ipAddress = value;
+                _ipAddress = value;
                 OnPropertyChanged("IpAddress");
             }
         }
 
-        private bool? isConnected = false;
+        private bool? _isConnected = false;
         public bool? IsConnected {
-            get { return isConnected; }
+            get { return _isConnected; }
             set {
-                isConnected = value;
+                _isConnected = value;
                 OnPropertyChanged("IsConnected");
             }
         }
