@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using ADB_Lib;
 
@@ -22,7 +18,7 @@ namespace ADBRemoteUI {
             BackCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Backspace); }, (o) => { return true; });
         }
 
-        private string ipAddress = "192.168.29.104";
+        private string ipAddress = "192.168.1.86:5555";
         public string IpAddress {
             get {
                 return ipAddress;
