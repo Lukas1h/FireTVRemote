@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -38,25 +38,37 @@ namespace ADB_Lib
         public static void ADBActionKey(ConsoleKey key) {
             switch (key) {
                 case ConsoleKey.UpArrow:
-                    adbCommand("shell input keyevent 19");
+                    adbCommand("shell input keyevent KEYCODE_DPAD_UP");
                     break;
                 case ConsoleKey.DownArrow:
-                    adbCommand("shell input keyevent 20");
+                    adbCommand("shell input keyevent KEYCODE_DPAD_DOWN");
                     break;
                 case ConsoleKey.LeftArrow:
-                    adbCommand("shell input keyevent 21");
+                    adbCommand("shell input keyevent KEYCODE_DPAD_LEFT");
                     break;
                 case ConsoleKey.RightArrow:
-                    adbCommand("shell input keyevent 22");
+                    adbCommand("shell input keyevent KEYCODE_DPAD_RIGHT");
                     break;
                 case ConsoleKey.Escape:
                     adbCommand("shell input keyevent 3");
                     break;
                 case ConsoleKey.Backspace:
-                    adbCommand("shell input keyevent 4");
+                    adbCommand("shell input keyevent KEYCODE_BACK");
+                    break;
+                case ConsoleKey.Tab:
+                    adbCommand("shell input keyevent KEYCODE_MENU");
+                    break;
+                case ConsoleKey.MediaPrevious:
+                    adbCommand("shell input keyevent KEYCODE_MEDIA_REWIND");
+                    break;
+                case ConsoleKey.MediaNext:
+                    adbCommand("shell input keyevent KEYCODE_MEDIA_FAST_FORWARD");
+                    break;
+                case ConsoleKey.MediaPlay:
+                    adbCommand("shell input keyevent KEYCODE_MEDIA_PLAY_PAUSE");
                     break;
                 case ConsoleKey.Enter:
-                    adbCommand("shell input keyevent 66");
+                    adbCommand("shell input keyevent KEYCODE_DPAD_CENTER");
                     break;
                 case ConsoleKey.A:
                     adbCommand("shell input keyevent 29");
