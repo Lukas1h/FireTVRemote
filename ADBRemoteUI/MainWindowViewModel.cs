@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Windows.Input;
 using ADB_Lib;
@@ -21,6 +21,10 @@ namespace ADBRemoteUI {
             LeftCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.LeftArrow); }, (o) => true);
             RightCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.RightArrow);  }, (o) => true);
             BackCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Backspace); }, (o) => true);
+            MenuCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.Tab); }, (o) => true);
+            RewindCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.MediaPrevious); }, (o) => true);
+            FastForwardCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.MediaNext); }, (o) => true);
+            PlayPauseCommand = new DelegateCommand((o) => { if (IsConnected == true) ADBCommand.ADBActionKey(ConsoleKey.MediaPlay); }, (o) => true);
         }
 
         private string _ipAddress = Properties.Settings.Default.IpAddress;
@@ -53,6 +57,10 @@ namespace ADBRemoteUI {
         public ICommand HomeCommand { get; set; }
         public ICommand SelectCommand { get; set; }
         public ICommand BackCommand { get; set; }
+        public ICommand MenuCommand { get; set; }
+        public ICommand RewindCommand { get; set; }
+        public ICommand FastForwardCommand { get; set; }
+        public ICommand PlayPauseCommand { get; set; }
         
         public event PropertyChangedEventHandler PropertyChanged;
 
