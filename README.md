@@ -1,22 +1,24 @@
-windows-adb-remote
+FireTV Remote
 ==================
-A simple console application which allows to connect via adb to an android device and send via "adb input keyevents <id>" different inputs.
+A simple application which allows to connect via adb to a FireTV device and send via "adb input keyevents <id>" different inputs.
 
 Keys that are mapped:
 
 Enter -> Enter/Select
 
-Backspace -> Back
+Escape -> Back
 
-Escape -> Menu
-
-A-Z + 1-0 -> Normal Keyboard Keys
-
-Comma -> ,
-
-Period -> .
-
-F5 -> Back to Menu
+Arrow Keys -> Up, Down, Left, Right
 
 
-This is not a remote for everyday usage, since its very slow (adb). I just made this small program, because I forgot my Amazon Fire TV Remote, when I was at my girlfriends house.
+This is not a remote for everyday usage, since it is very slow (adb).
+
+Instructions For Use
+==================
+1. Enable ADB Debugging on your FireTV device
+        - https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html
+
+2. Put the IP Address of your FireTV device followed by :5555 in the "Enter IP Address" box (ex. 10.0.0.10:5555)
+        - http://www.aftvnews.com/how-to-determine-the-ip-address-of-an-amazon-fire-tv-or-fire-tv-stick/
+
+3. Use the remote as normal
