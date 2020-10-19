@@ -4,7 +4,7 @@ A simple application which allows to connect via adb to a FireTV device and send
 
 Keys that are mapped:
 
-Enter -> Enter/Select (May be broken at the moment, I will try to fix it)
+Enter -> Enter/Select (Broken at the moment, I will try to fix it but I'm lazy)
 
 Escape -> Back
 
